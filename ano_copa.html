@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<script>
+
+function pulaLinha() {
+    document.write("<br><br>");
+}
+
+function mostra(frase) {
+    document.write(frase);
+    pulaLinha();
+}
+
+var limite = parseInt(prompt("Insira a data limite para consulta"));
+var anoCopa = 1930;
+
+while(anoCopa <= limite) {
+
+    mostra("Houve Copa no ano de " + anoCopa);
+
+    if (anoCopa == 1958) {
+        mostra("Neste ano o Brasil foi Campeão pela primeira vez ");
+    }
+    if (anoCopa == 2002) {
+        mostra("Neste ano o Brasil foi Campeão pela última vez ");
+    }
+    
+    // Incremento para que o resultado volte ao laço somando 4 até que chege ao limite
+    anoCopa = anoCopa + 4;
+}
+
+alert("FIM");
+</script>

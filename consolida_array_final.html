@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+
+<h1>Receitas da Manuela</h1>
+
+<script>
+
+    // Variável que armazena uma lista vazia, que receberá dados
+    var ingredientes = [];
+
+    // Definição da quantidade
+    var quantidade = parseInt(prompt("Quantos ingredientes você vai adicionar?"));
+
+    // contador parte de 1 para dar start
+    var contador = 1;
+
+
+    // Condicional do laço que rodará enquanto o contador informado seja menor ou iguala  quantidade informada
+    while( contador <= quantidade) {
+
+        // Nesta varável é guardada o ingrediente mais a informação da ordem (contador)
+        var ingrediente = prompt("Informe o ingrediente " + contador);
+
+        // O Push inclui a parâmetro para dentro da lista
+        ingredientes.push(ingrediente);
+
+        // Incremento do contador
+        contador++;
+        
+    }
+
+    document.write(ingredientes);
+    console.log(ingredientes);
+</script>
