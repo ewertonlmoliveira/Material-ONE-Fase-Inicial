@@ -1,0 +1,89 @@
+<meta charset="UTF-8">
+            
+<input/>
+<button>Compare com o meu segredo</button>
+
+<script>
+
+    // função para gerar um número aleatório
+    function sorteia() {
+
+        return Math.round(Math.random() * 10);
+    }
+
+    // função para incluir os números aleatórios dentro da lista de acordo com a quantidade informada
+    function sorteiaNumeros(quantidade) {
+
+        // variavel da lista vazia
+        var segredos = [];
+        // varivael para inciar a contagem do numero de segredos
+        var numeros = 1;
+
+        // função para condicionar a inclusão de numeros limitado a quantidade
+        while (numeros <= quantidade) {
+            //variável que guarda o numero gerado pela função sorteia
+            var numeroAleatorio = sorteia();
+            // função incial para condicionar que o número incluido na lista não seja 0
+            if (numeroAleatorio != 0) {
+                // variável booleana para definir se o numero será incluído na lista ou não
+                var achou = false;
+            // função para varrer a lista e verificar se o numero aleatório consta ou não na lista   
+            for(var posicao = 0; posicao < segredos.length; posicao++)
+                // caso o numero aleatório ja esteja na lista, o booleano se torna true e sai da lista, voltando a sortear outro
+                if(segredos[posicao] == numeroAleatorio) {
+                    achou = true;
+                    // parada caso numero ja esteja na lista e sai do loop for
+                    break;
+                }
+
+
+            // caso o numero aleatório não esteja na lista, o booleano permance false e entra na lista        
+            if(achou == false){
+            // push serve para que o parâmetro (no caso o numeroAleatório) seja incluido na lista segredos        
+            segredos.push(numeroAleatorio);
+            // apenas neste caso haverá o incremento da contagem do numero de segredos
+            numeros++
+            }
+
+            }
+            
+        }
+        // a função sorteiaNumeros retornará uma lista com segredos, não repetidos e sem zero.
+        return segredos;
+    }
+
+// a lista com segredos retornado será armazenado na variável segredos    
+var segredos = sorteiaNumeros(5);
+console.log(segredos);
+
+var input = document.querySelector("input");
+    input.focus();
+    
+        function verifica(){
+
+            var achou = false;
+
+            for(var posicao = 0; posicao < segredos.length; posicao++){
+            
+            if(input.value == segredos[posicao]){
+                alert("Você ACERTOU!!!!!!");
+                achou = true;
+                break;
+                }
+            }     
+            if (achou == false) {
+                alert("Você ERROUUU!!!!!")
+            }
+
+        input.value = "";
+        input.focus();
+        }
+            
+        var button = document.querySelector("button");
+        button.onclick = verifica;
+
+
+       
+
+        
+</script>
