@@ -5,4 +5,5 @@ Inicialmente estudando a Lógica de Programação utilizando HTML e JavaScript p
 * Algorítimos;
 * Variáveis;
 * Condicionais;
+* Laços de Repetição;
 * Funções.
